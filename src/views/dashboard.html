@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Gerente Dashboard</title>
+
+    <!-- Iconos -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <div class="grid-container">
+      <header class="header">
+        <!-- Icono de menú para abrir el sidebar -->
+        <div class="menu-icon" onclick="openSidebar()">
+          <span class="material-icons-outlined">menu</span>
+        </div>
+        <div></div>
+        <!-- Icono de notificaciones en la esquina derecha del encabezado -->
+        <div class="header-right">
+          <span class="material-icons-outlined">notifications</span>
+        </div>
+      </header>
+
+      <aside id="sidebar">
+        <div class="sidebar-title">
+          <div class="sidebar-brand">
+            <span class="material-icons-outlined"></span> Menu Admin
+          </div>
+          <!-- Icono para cerrar el sidebar -->
+          <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+        </div>
+        <ul class="sidebar-list">
+          <!-- Lista de elementos en el sidebar -->
+          <li class="sidebar-list-item">
+            <a href="/dashboard">
+              <span class="material-icons-outlined">dashboard</span> Dashboard
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="/clientes">
+              <span class="material-icons-outlined">groups</span> Clientes
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#" onclick="toggleSubMenu(event)">
+              <span class="material-icons-outlined">schedule</span> Horarios
+              <span class="material-icons-outlined">expand_more</span>
+            </a>
+            <!-- Submenú de horarios -->
+            <ul class="submenu" style="display: none; padding-left: 20px">
+              <li class="sidebar-list-item">
+                <a href="/Horariosp">Personal</a>
+              </li>
+              <li class="sidebar-list-item">
+                <a href="/horariose">Establecimiento</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="/ordenes">
+              <span class="material-icons-outlined">assignment</span> Ordenes
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="/personal">
+              <span class="material-icons-outlined">groups</span> Personal
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="/platos">
+              <span class="material-icons-outlined">restaurant_menu</span> Platos
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="/quincena">
+              <span class="material-icons-outlined">calendar_today</span> Quincena
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="/ventas">
+              <span class="material-icons-outlined">point_of_sale</span> Ventas
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <main class="main-container">
+        <div class="main-title">
+          <h2>¡Bienvenido Gerente!</h2>
+        </div>
+
+        <div class="main-cards">
+          <a href="/platos">
+          <div class="card">
+            <div class="card-inner">
+              <h3>Platos</h3>
+              <span class="material-icons-outlined">restaurant_menu</span>
+            </div>
+            <h1>35</h1>
+          </div>
+          </a>
+
+          <a href="/clientes">
+          <div class="card">
+            <div class="card-inner">
+              <h3>Clientes</h3>
+              <span class="material-icons-outlined">groups</span>
+            </div>
+            <h1>29</h1>
+          </div>
+          </a>
+
+          <a href="/ventas">
+          <div class="card">
+            <div class="card-inner">
+              <h3>Ventas</h3>
+              <span class="material-icons-outlined">point_of_sale</span>
+            </div>
+            <h1>400</h1>
+          </div>
+          </a>
+
+          <a href="/quincena">
+          <div class="card">
+            <div class="card-inner">
+              <h3>Quincenas</h3>
+              <span class="material-icons-outlined">calendar_today</span>
+            </div>
+            <h1>1</h1>
+          </div>
+          </div>
+          </a>
+
+          <div class="charts">
+            <div class="charts-card">
+              <h2 class="chart-title">Platos más vendidos</h2>
+              <div id="bar-chart"></div>
+            </div>
+
+            <div class="charts-card">
+              <h2 class="chart-title">Órdenes de Compra y Fiados</h2>
+              <div id="area-chart"></div>
+            </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
+    <script src="/js/scripts.js"></script>
+    
+  </body>
+</html>
